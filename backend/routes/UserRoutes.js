@@ -4,9 +4,13 @@ import { authentication, authorizeAdmin } from "../middleware/authMiddleware.js"
 
 const router = express.Router();
 
-router.route('/').post(createUser).get(authentication,authorizeAdmin,getAllUsers);
+router.route('/').post(createUser)
+.get(authentication,authorizeAdmin,getAllUsers);
+
+
 router.route('/auth').post(loginUser);
 router.route('/logout').post(logoutUser);
+
 router.route('/profile')
 .get(authentication,getUserProfile)
 .put(authentication,updateCurrUserProfile)//.delete(authentication,deleteUserProfile).get(authentication,authorizeAdmin,getUserById).put(authentication,authorizeAdmin,updateUserById).delete(authentication,authorizeAdmin,deleteUserById);
