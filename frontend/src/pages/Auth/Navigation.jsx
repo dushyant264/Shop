@@ -11,7 +11,7 @@ import { logout } from "../../redux/features/auth/authSlice"
 const Navigation = () => {
   
 
-  const userInfo = useSelector((state) => state.auth)
+  const userInfo = useSelector((state) => state.auth.userInfo)
 
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [showSidebar, setShowSidebar] = useState(false)
@@ -67,7 +67,7 @@ const Navigation = () => {
     <div className="relative">
       <button onClick={toggleDropdown} className="flex items-center text-gray-800 focus:outline-none ">
         {userInfo? (
-        <span className="text-white">{userInfo.username}</span>
+        <span className="text-white   ">{userInfo.username}</span>
         ) : (
           <></>
         )}
